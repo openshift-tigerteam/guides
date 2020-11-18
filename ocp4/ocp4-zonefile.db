@@ -34,14 +34,4 @@ master2.ocp4		IN	A	192.168.1.99
 worker0.ocp4		IN	A	192.168.1.11
 worker1.ocp4		IN	A	192.168.1.7
 ;
-; The ETCd cluster lives on the masters...so point these to the IP of the masters
-etcd-0.ocp4	IN	A	192.168.1.97
-etcd-1.ocp4	IN	A	192.168.1.98
-etcd-2.ocp4	IN	A	192.168.1.99
-;
-; The SRV records are IMPORTANT....make sure you get these right...note the trailing dot at the end...
-_etcd-server-ssl._tcp.ocp4	IN	SRV	0 10 2380 etcd-0.ocp4.example.com.
-_etcd-server-ssl._tcp.ocp4	IN	SRV	0 10 2380 etcd-1.ocp4.example.com.
-_etcd-server-ssl._tcp.ocp4	IN	SRV	0 10 2380 etcd-2.ocp4.example.com.
-;
 ;EOF
